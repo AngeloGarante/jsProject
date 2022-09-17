@@ -20,17 +20,26 @@ let pokemonRepository = (function () {
         }
     ];
     function add(item) {
-        pokemonList.push(item);
+        item !== "object" ? alert("You should add a Pokemon as object") : pokemonList.push(item);
 
     }
+
     function getAll() {
-        return this.pokemonList;
+        return pokemonList;
     }
-});
+
+
+    return {
+        add: add,
+        getAll: getAll
+    }
+
+})();
 
 pokemonRepository.getAll().forEach(function (pokemon) {
     document.write(`name: ${pokemon.name} (height: ${pokemon.height} meter) ${pokemon.height > 1.7 ? "wow this pokemon is really big!" : ""} <br>`);
-
 });
+
+
 
 
