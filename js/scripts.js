@@ -11,11 +11,13 @@ let pokemonRepository = (function () {
         let pokemonIndex = document.querySelector(".pokemon-index");
         let indexPokeLi = document.createElement("li");
         let buttonPoke = document.createElement("button");
-        buttonPoke.addEventListener("click", showDetails(pokemon));
         buttonPoke.innerText = pokemon.name;
         buttonPoke.classList.add("button-index");
         indexPokeLi.appendChild(buttonPoke);
         pokemonIndex.appendChild(indexPokeLi);
+        buttonPoke.addEventListener("click", () => {
+            showDetails(pokemon)
+        });
     }
 
 
